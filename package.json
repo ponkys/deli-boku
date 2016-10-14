@@ -50,7 +50,6 @@
     "typescript": "2.0.2"
   },
   "devDependencies": {
-    
   },
   "engines": {
     "node": "6.7.0"
