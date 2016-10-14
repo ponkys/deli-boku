@@ -5,13 +5,11 @@
   "description" : "Frontend for Doku Latino Budapest",
   "angular-cli": {},
   "scripts": {
-    "start": "http-server",
+    "start": "ng serve",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
     "pree2e": "webdriver-manager update",
-    "e2e": "protractor",
-    "preinstall": "npm install -g http-server",
-    "postinstall": "ng build && mv dist/* ."
+    "e2e": "protractor"
   },
   "keywords": [
     "dokuLatino",
@@ -32,8 +30,9 @@
     "core-js": "^2.4.1",
     "rxjs": "5.0.0-beta.12",
     "ts-helpers": "^1.1.1",
-    "zone.js": "^0.6.23",
-
+    "zone.js": "^0.6.23"
+  },
+  "devDependencies": {
     "@types/jasmine": "^2.2.30",
     "angular-cli": "1.0.0-beta.16",
     "codelyzer": "~0.0.26",
@@ -48,8 +47,6 @@
     "ts-node": "1.2.1",
     "tslint": "3.13.0",
     "typescript": "2.0.2"
-  },
-  "devDependencies": {
   },
   "engines": {
     "node": "6.7.0"
