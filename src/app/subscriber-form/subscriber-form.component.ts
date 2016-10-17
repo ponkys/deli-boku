@@ -10,7 +10,6 @@ import { SubscribeService } from '../subscribe.service';
 })
 export class SubscriberFormComponent implements OnInit {
   errorMessage: string;
-  model = new Subscriber('test@test.com');
   active = true;
   subscribers: Subscriber[];
   mode = 'Observable';
@@ -18,11 +17,9 @@ export class SubscriberFormComponent implements OnInit {
   constructor (private subscribeService: SubscribeService) {}
 
   submitted = false;
-  onSubmit() { this.submitted = true; }
-  // TODO: Remove this when we're done
-  get diagnostic() { return JSON.stringify(this.model); }
 
   addSubscriber (email: string) {
+    this.submitted = true;
     if (!email) { return; }
     this.subscribeService.createSubscriber(email)
                      .subscribe(
