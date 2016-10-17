@@ -6,6 +6,7 @@ import { JsonpModule, HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { SubscriberFormComponent } from './subscriber-form/subscriber-form.component';
+import { SubscribeService } from './subscribe.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { SubscriberFormComponent } from './subscriber-form/subscriber-form.compo
     HttpModule,
     JsonpModule
   ],
-  providers: [],
+  providers: [SubscribeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
