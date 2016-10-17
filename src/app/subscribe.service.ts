@@ -1,9 +1,11 @@
 
-import { Injectable } from '@angular/core';
+import { Injectable }   from '@angular/core';
 
-import { Headers, Http, RequestOptions, Response } from '@angular/http';
-import {Observable} from 'rxjs/observable';
-import { Subscriber } from './subscriber';
+import {  Headers, Http, 
+          RequestOptions, 
+          Response }    from '@angular/http';
+import { Observable }   from 'rxjs/Observable';
+import { Subscriber }   from './subscriber';
 import './rxjs-operators';
 
 @Injectable()
@@ -31,7 +33,7 @@ export class SubscribeService {
     // In a real world app, we might use a remote logging infrastructure
     // We'd also dig deeper into the error to get a better message
     let errMsg = (error.message) ? error.message :
-      error.status ? `${error.status} - ${error.statusText}` : 'Server error';
+    error.status ? `${error.status} - ${error.statusText}` : 'Server error';
     console.error(errMsg); // log to console instead
     return Observable.throw(errMsg);
   }
