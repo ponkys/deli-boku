@@ -9,12 +9,12 @@ import { Subscriber } from './subscriber';
 @Injectable()
 export class SubscribeServiceService {
 
-  private postsUrl = 'http://localhost:4000/subscribers';
+  private subscribersUrl = 'http://localhost:4000/subscribers';
 
   constructor(private _http: Http) { }
 
-  createPost(subscriber: Subscriber){
-        return this._http.post(this.postsUrl, JSON.stringify(subscriber))
+  createSubscriber(subscriber: Subscriber){
+        return this._http.post(this.subscribersUrl, JSON.stringify(subscriber))
             .map(res => res.json());
     }
 
