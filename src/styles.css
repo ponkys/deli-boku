@@ -4,4 +4,6 @@ body {
     color: #3c3c3c;
     text-align: center;
     background-color: white;
+    line-height: 1.3em;
+    -webkit-font-smoothing: antialiased;
 }

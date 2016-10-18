@@ -18,17 +18,28 @@
 
 .callToAction {
   cursor: pointer;
-  background-color: #F74385;
+  background-color: #de286b;
   border: 0px solid grey;
-  border-radius: 2.35rem;
+  border-radius: 2rem;
   color: white;
   font-weight: 300;
   font-size: 2em;
   margin-top: 1em;
   padding: .5rem 2rem;
+  &:hover {
+    border-radius: 2.5rem;
+    background-color: #F74385;
+  }
 }
 
-.callToAction :hover {
-  border-radius: 1.35rem;
+.callToAction-sent {
+  cursor: pointer;
   background-color: #de286b;
-}
+  border: 0px solid grey;
+  border-radius: 2rem;
+  color: white;
+  font-weight: 300;
+  font-size: 2em;
+  margin-top: 2em;
+  padding: .5rem 2rem;
+  }

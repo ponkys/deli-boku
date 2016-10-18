@@ -1,18 +1,23 @@
-<form>
+<form (ngSubmit)="onSubmit()" #subscriberForm="ngForm" *ngIf="sentDelete" class="animated bounceInUp">
   <div class="form-group">
-    <input #newSubscriberEmail type="text" placeholder="Email" 
+    <input #email type="text" placeholder="Email" 
     class="form-control inputDoku" 
     id="email" 
     required/>
   </div>
-  <!--<div  [hidden]="email.valid || email.pristine" 
+
+  <div [hidden]="email.valid || email.pristine" 
         class="alert alert-danger">
         Email is required
-  </div>-->
-  <button type="submit" 
-          class="btn btn-default callToAction"
-          (click)= "addSubscriber(newSubscriberEmail.value); newSubscriberEmail.value=''">
+  </div>
+  <button *ngIf="sentDelete" type="submit" 
+          class="callToAction"
+          (click)= "addSubscriber(email.value); email.value=''" 
+          [disabled]="!subscriberForm.form.valid">
           Subscribe
   </button>
-  <div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
 </form>
+<button  *ngIf="sent"
+      class="callToAction-sent animated fadeOutRight">
+      Subscribed!
+</button>

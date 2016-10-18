@@ -5,7 +5,7 @@ import { SubscribeService } from '../subscribe.service';
 @Component({
   selector: 'app-subscriber-form',
   templateUrl: './subscriber-form.component.html',
-  styleUrls: ['./subscriber-form.component.css'],
+  styleUrls: ['./subscriber-form.component.scss'],
   providers: [SubscribeService]
 })
 export class SubscriberFormComponent implements OnInit {
@@ -14,16 +14,22 @@ export class SubscriberFormComponent implements OnInit {
   subscribers: Subscriber[];
   mode = 'Observable';
 
+  sent = false;
+  sentDelete = true;
+
   constructor (private subscribeService: SubscribeService) {}
 
   submitted = false;
 
   addSubscriber (email: string) {
+    this.sentDelete = !this.sentDelete;
+    this.sent = !this.sent;
     this.submitted = true;
     if (!email) { return; }
-    this.subscribeService.createSubscriber(email)
+    this.subscribeService.addSubscriber(email)
                      .subscribe(
-                       subscriber  => this.subscribers.push(subscriber),
+                       // I dont need this as I'm not expectong anything it is just a subscribe.
+                       //subscriber  => this.subscribers.push(subscriber),
                        error =>  this.errorMessage = <any>error);
   }
 
