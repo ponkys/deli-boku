@@ -16,24 +16,31 @@ export class SubscriberFormComponent implements OnInit {
 
   sent = false;
   sentDelete = true;
+  submitted = false;
 
   constructor (private subscribeService: SubscribeService) {}
 
-  submitted = false;
+  ngOnInit() { this.getSubscribers(); }
+
+  getSubscribers() {
+    this.subscribeService.getSubscribers()
+                     .subscribe(
+                       subscribers => this.subscribers = subscribers,
+                       error =>  this.errorMessage = <any>error);
+  }
+
 
   addSubscriber (email: string) {
     this.sentDelete = !this.sentDelete;
     this.sent = !this.sent;
     this.submitted = true;
+
     if (!email) { return; }
     this.subscribeService.addSubscriber(email)
                      .subscribe(
                        // I dont need this as I'm not expectong anything it is just a subscribe.
-                       //subscriber  => this.subscribers.push(subscriber),
+                       subscriber  => this.subscribers.push(subscriber),
                        error =>  this.errorMessage = <any>error);
-  }
-
-  ngOnInit() {
   }
 
 
