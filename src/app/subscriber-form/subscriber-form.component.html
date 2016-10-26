@@ -20,8 +20,8 @@
           [disabled]="!subscriberForm.form.valid">
           Subscribe
   </button>
-  <p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
 </form>
+ <p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
 <button  *ngIf="sent"
       class="callToAction-sent animated fadeOutRight">
       Subscribed!

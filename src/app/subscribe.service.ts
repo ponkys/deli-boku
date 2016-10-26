@@ -11,8 +11,7 @@ import './rxjs-operators';
 @Injectable()
 export class SubscribeService {
 
-  private subscriberUrl = 'https://dokulatino-back.herokuapp.com/subscribers';
-  private getsubscribersUrl = 'https://dokulatino-back.herokuapp.com/';
+  private subscriberUrl = 'https://dokulatino-back.herokuapp.com/';
 
 
   private extractData(res: Response) {
@@ -28,7 +27,7 @@ export class SubscribeService {
   constructor(private _http: Http) { }
 
   getSubscribers(): Observable<Subscriber[]> {
-    return this._http.get(this.getsubscribersUrl)
+    return this._http.get(this.subscriberUrl)
                     .map(this.extractData)
                     .catch(this.handleError);
   }
