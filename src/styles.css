@@ -16,10 +16,19 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Comfortaa', cursive;
+    line-height: 1.5em;
 }
 
 h1 {
     font-size: 250%;
+}
+
+h2 {
+    font-size: 200%;
+}
+
+h3 {
+    font-size: 150%;
 }
 
 h2, h3, h4, h5, h6 {
@@ -49,4 +58,8 @@ h2, h3, h4, h5, h6 {
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
+}
+
+.text-aling-center {
+    text-align: center;
 }
