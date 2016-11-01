@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body {
     color: #3c3c3c;
+    margin: 2em;
     text-align: center;
     background-color: white;
     line-height: 1.3em;
@@ -15,11 +16,19 @@ body {
     animation: AnimationName 60s ease infinite;
 }
 
-h1, h2, h4, h3, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Comfortaa', cursive;
 }
 
-p, li {
+h1 {
+    font-size: 250%;
+}
+
+h2, h3, h4, h5, h6 {
+    font-weight: lighter;
+}
+
+* {
     font-family: 'Open Sans', sans-serif;
 }
 

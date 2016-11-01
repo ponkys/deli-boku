@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { SubscriberFormComponent } from './subscriber-form/subscriber-form.component';
 import { SubscribeService } from './subscribe.service';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
-    SubscriberFormComponent
+    SubscriberFormComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
