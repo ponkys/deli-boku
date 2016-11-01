@@ -1,7 +1,3 @@
-<h2>Subscribers:</h2>
-<ul>
-  <li *ngFor="let subscriber of subscribers">{{subscriber.email}}</li>
-</ul>
 <form (ngSubmit)="onSubmit()" #subscriberForm="ngForm" *ngIf="sentDelete" class="animated bounceInUp">
   <div class="form-group">
     <input #email type="text" placeholder="Email" 

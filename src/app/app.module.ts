@@ -10,13 +10,15 @@ import { SubscribeService } from './subscribe.service';
 import { HeaderComponent } from './header/header.component';
 
 import { AppRoutingModule }     from './app-routing.module';
+import { SubscribersListComponent } from './subscribers-list/subscribers-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
     SubscriberFormComponent,
-    HeaderComponent
+    HeaderComponent,
+    SubscribersListComponent
   ],
   imports: [
     BrowserModule,
