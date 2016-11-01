@@ -37,6 +37,11 @@ header {
             display: inline-block;
             text-decoration: none;
         }
+
+        a.active {
+            color: #0ADEFF;
+        }
+
         .btn {
             display: inline-block;
             padding: 6px 12px;
