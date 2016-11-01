@@ -20,7 +20,9 @@ export class SubscriberFormComponent implements OnInit {
 
   constructor (private subscribeService: SubscribeService) {}
 
-  ngOnInit() { }
+  ngOnInit() { 
+    this.subscribers = [];
+  }
 
   addSubscriber (email: string) {
     this.sentDelete = !this.sentDelete;
