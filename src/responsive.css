@@ -6,6 +6,7 @@
   display: table;
   clear: both;
 }
+
 [class*="col-"] {
     float: left;
     padding: 15px;
