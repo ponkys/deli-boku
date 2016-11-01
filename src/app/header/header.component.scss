@@ -20,17 +20,23 @@ header {
     }
 
     nav{
-        position: absolute;
-        bottom: 0;
         height: 60px;
-        line-height: 60px;
         width: 100%;
-        background-color: rgba(0,0,0,.1);
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+            align-content: center;
+            -webkit-padding-start: 0px;
+        }
+        li {
+            list-style-type: none;
+        }
         a{
-            color: #fff;
+            color: #3c3c3c;
             display: inline-block;
-            padding: 10px 15px;
-            line-height: 1;
             text-decoration: none;
             &:hover{
                 box-shadow: 0 0 0 1px deeppink;
