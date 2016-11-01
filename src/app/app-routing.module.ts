@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'welcome',  component: WelcomeComponent },
   { path: 'about',  component: AboutComponent },
   { path: 'subscribers',  component: SubscribersListComponent },
-  { path: 'watch',  component: WatchFreeComponent }
+  { path: 'watch-free',  component: WatchFreeComponent }
 ];
 
 @NgModule({
