@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 
 import { AppRoutingModule }     from './app-routing.module';
 import { SubscribersListComponent } from './subscribers-list/subscribers-list.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SubscribersListComponent } from './subscribers-list/subscribers-list.co
     WelcomeComponent,
     SubscriberFormComponent,
     HeaderComponent,
-    SubscribersListComponent
+    SubscribersListComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
