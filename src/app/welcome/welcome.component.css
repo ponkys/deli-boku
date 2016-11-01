@@ -1,3 +1,16 @@
 app-subscriber-form {
     text-align: center;
 }
+
+.down {
+    margin-top: 5rem;
+}
+
+.info-center{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+}
