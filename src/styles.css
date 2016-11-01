@@ -61,6 +61,10 @@ h2, h3, h4, h5, h6 {
     100%{background-position:0% 50%}
 }
 
-.text-aling-center {
+.text-align-center {
     text-align: center;
+}
+
+.bottom-line {
+    border-bottom: 1px solid rgba(60,60,60, 0.1)  
 }

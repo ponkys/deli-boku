@@ -1,4 +1,6 @@
-<h2># of subscribers {{subscribers?.length}}:</h2>
-<ul>
-  <li *ngFor="let subscriber of subscribers; let i=index">{{i+ 1}}. {{subscriber.email}}</li>
-</ul>
+<div class="col-8 col-m-10 about group center">
+  <h2 class="bottom-line"># of subscribers {{subscribers?.length}}:</h2>
+  <ul>
+    <li *ngFor="let subscriber of subscribers; let i=index">{{i+ 1}}. {{subscriber.email}}</li>
+  </ul>
+</div>
