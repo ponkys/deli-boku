@@ -14,6 +14,11 @@ import { SubscribersListComponent } from './subscribers-list/subscribers-list.co
 import { AboutComponent } from './about/about.component';
 import { WatchFreeComponent } from './watch-free/watch-free.component';
 
+//maps
+import { AgmCoreModule } from 'angular2-google-maps/core';
+import { BasicLocationMapComponent } from './basic-location-map/basic-location-map.component';
+import { BasicLocationMapStyleDirective } from './basic-location-map/basic-location-map-style.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,14 +27,19 @@ import { WatchFreeComponent } from './watch-free/watch-free.component';
     HeaderComponent,
     SubscribersListComponent,
     AboutComponent,
-    WatchFreeComponent
+    WatchFreeComponent,
+    BasicLocationMapComponent,
+    BasicLocationMapStyleDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     JsonpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCrr2PKXEHx2XNvk0v8T_KAKxzmsylOjLQ'
+    })
   ],
   providers: [SubscribeService],
   bootstrap: [AppComponent]

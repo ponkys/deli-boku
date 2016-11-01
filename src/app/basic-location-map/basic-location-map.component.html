@@ -1,0 +1,34 @@
+<div class="col-8 col-m-10 about group center bottom-line">
+  <h1>Where?</h1>
+  <p>
+    <strong>Premier Kultcafé</strong><br>
+    Budapest, Üllői út 2-4., 1085 Hungría<br>
+    +36 70 514 7914
+  </p>
+  <sebm-google-map class="sebm-google-map-container"
+    [latitude]="lat"
+    [longitude]="lng"
+    [zoom]="zoom"
+    [disableDefaultUI]="true"
+    [zoomControl]="true"
+  >
+  <appBasicLocationMapStyle></appBasicLocationMapStyle>
+
+
+    <sebm-google-map-marker 
+        *ngFor="let m of markers; let i = index"
+        (markerClick)="clickedMarker(m.label, i)"
+        [latitude]="m.lat"
+        [longitude]="m.lng"
+        [label]="m.label"
+        [markerDraggable]="m.draggable"
+        [iconUrl]="m.icon">
+
+      <sebm-google-map-info-window>
+          <p>More info!</p>
+      </sebm-google-map-info-window>
+
+    </sebm-google-map-marker>
+
+  </sebm-google-map>
+</div>
