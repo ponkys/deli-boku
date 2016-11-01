@@ -8,7 +8,7 @@ import { SubscribeService } from '../subscribe.service';
   styleUrls: ['./subscriber-form.component.scss'],
   providers: [SubscribeService]
 })
-export class SubscriberFormComponent {
+export class SubscriberFormComponent implements OnInit {
   errorMessage: string;
   active = true;
   subscribers: Subscriber[];
@@ -19,6 +19,8 @@ export class SubscriberFormComponent {
   submitted = false;
 
   constructor (private subscribeService: SubscribeService) {}
+
+  ngOnInit() { }
 
   addSubscriber (email: string) {
     this.sentDelete = !this.sentDelete;
