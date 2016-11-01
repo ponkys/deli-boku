@@ -9,6 +9,8 @@ import { SubscriberFormComponent } from './subscriber-form/subscriber-form.compo
 import { SubscribeService } from './subscribe.service';
 import { HeaderComponent } from './header/header.component';
 
+import { AppRoutingModule }     from './app-routing.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,8 @@ import { HeaderComponent } from './header/header.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    JsonpModule
+    JsonpModule,
+    AppRoutingModule
   ],
   providers: [SubscribeService],
   bootstrap: [AppComponent]
