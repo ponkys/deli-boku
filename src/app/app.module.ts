@@ -12,6 +12,7 @@ import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule }     from './app-routing.module';
 import { SubscribersListComponent } from './subscribers-list/subscribers-list.component';
 import { AboutComponent } from './about/about.component';
+import { WatchFreeComponent } from './watch-free/watch-free.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AboutComponent } from './about/about.component';
     SubscriberFormComponent,
     HeaderComponent,
     SubscribersListComponent,
-    AboutComponent
+    AboutComponent,
+    WatchFreeComponent
   ],
   imports: [
     BrowserModule,
