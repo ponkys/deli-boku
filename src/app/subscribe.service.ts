@@ -11,7 +11,7 @@ import './rxjs-operators';
 @Injectable()
 export class SubscribeService {
 
-  private subscriberUrl = 'https://dokulatino-back.herokuapp.com/';
+  private subscriberUrl = 'https://dokulatino-back.herokuapp.com/subscribers';
 
 
   private extractData(res: Response) {

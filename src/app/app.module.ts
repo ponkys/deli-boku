@@ -19,6 +19,8 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
 import { BasicLocationMapComponent } from './basic-location-map/basic-location-map.component';
 import { BasicLocationMapStyleDirective } from './basic-location-map/basic-location-map-style.directive';
 
+import { LoginComponent } from './login/login.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,8 @@ import { BasicLocationMapStyleDirective } from './basic-location-map/basic-locat
     AboutComponent,
     WatchFreeComponent,
     BasicLocationMapComponent,
-    BasicLocationMapStyleDirective
+    BasicLocationMapStyleDirective,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
