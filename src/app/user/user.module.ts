@@ -3,6 +3,9 @@ import { CommonModule }   from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { JsonpModule, HttpModule } from '@angular/http';
 
+//routing
+import { UserRoutingModule } from './user-routing.module';
+
 //services
 
 
@@ -14,10 +17,13 @@ import { UserComponent } from './user.component';
     CommonModule,
     FormsModule,
     HttpModule,
-    JsonpModule 
+    JsonpModule,
+    //routing
+    UserRoutingModule 
   ],
   declarations: [
-    UserComponent],
+    UserComponent
+  ],
   providers:[]
 })
 export class UserModule { }
