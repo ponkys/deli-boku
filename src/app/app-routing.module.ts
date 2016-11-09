@@ -7,9 +7,8 @@ import { WatchFreeComponent } from './watch-free/watch-free.component';
 import { SubscribersListComponent } from './subscribers-list/subscribers-list.component';
 import { BasicLocationMapComponent } from './basic-location-map/basic-location-map.component';
 import { LoginComponent } from './user/login/login.component';
-//delete when refactor
-import { UsersListComponent } from './user/users-list/users-list.component';
-import { UserDetailComponent } from './user/user-detail/user-detail.component';
+
+import { PreloadSelectedModules } from './selective-preload-strategy';
 
 @NgModule({
   imports: [
@@ -21,14 +20,20 @@ import { UserDetailComponent } from './user/user-detail/user-detail.component';
       { path: 'watch-free',  component: WatchFreeComponent },
       { path: 'where',  component: BasicLocationMapComponent },
       { path: 'login',  component: LoginComponent },
-      //delete when refactor
-      { path: 'users',  component: UsersListComponent },
-      { path: 'detail/:userName', component: UserDetailComponent }
-
-      
-    ])
+      {
+        path: 'users',
+        loadChildren: 'app/user/user.module#UserModule',
+        data: {
+          preload: true
+        }
+      }     
+    ],
+    { preloadingStrategy: PreloadSelectedModules }
+    )
   ],
   exports: [RouterModule],
-  providers: []
+  providers: [
+    PreloadSelectedModules
+  ]
 })
 export class AppRoutingModule { }

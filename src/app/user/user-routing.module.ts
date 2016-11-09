@@ -2,36 +2,40 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 //Components
-//import { UsersComponent } from './users.component';
+import { UsersComponent } from './users/users.component';
 import { UsersListComponent } from './users-list/users-list.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { UserHomeComponent } from './user-home/user-home.component';
+
+//providers
+import { UserDetailResolve }   from './user-detail-resolve.service';
 
 @NgModule({
   imports: [
-    //  RouterModule.forChild([
-    //   {
-    //     path: 'crisis-center',
-    //     component: CrisisCenterComponent,
-    //     children: [
-    //       {
-    //         path: '',
-    //         component: CrisisListComponent,
-    //         children: [
-    //           {
-    //             path: ':id',
-    //             component: UserDetailComponent
-    //           },
-    //           {
-    //             path: '',
-    //             component: CrisisCenterHomeComponent
-    //           }
-    //         ]
-    //       }
-    //     ]
-    //   }
-    // ])
+     RouterModule.forChild([
+      {
+        path: '',
+        component: UsersComponent,
+        children: [
+          {
+            path: '',
+            component: UsersListComponent,
+            children: [
+              {
+                path: ':userName',
+                component: UserDetailComponent 
+              },
+              {
+                path: '',
+                component: UserHomeComponent
+              }
+            ]
+          }
+        ]
+      }
+    ])
   ],
   exports: [RouterModule],
-  providers: []
+  providers: [ UserDetailResolve ]
 })
 export class UsersRoutingModule { }

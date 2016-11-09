@@ -29,11 +29,6 @@ import { AppRoutingModule }     from './app-routing.module';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { BasicLocationMapComponent } from './basic-location-map/basic-location-map.component';
 import { BasicLocationMapStyleDirective } from './basic-location-map/basic-location-map-style.directive';
-//delete
-import { UserDetailComponent } from './user/user-detail/user-detail.component';
-import { UserService } from './user/user.service';
-import { UsersListComponent } from './user/users-list/users-list.component';
-//import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
@@ -47,11 +42,7 @@ import { UsersListComponent } from './user/users-list/users-list.component';
     BasicLocationMapComponent,
     BasicLocationMapStyleDirective,
     //check this later module direct due to route
-    LoginComponent,
-    //delete
-    UserDetailComponent,
-    UsersListComponent,
-    //UsersComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +56,7 @@ import { UsersListComponent } from './user/users-list/users-list.component';
     }),
     UserModule 
   ],
-  providers: [SubscribeService, UserService],
+  providers: [SubscribeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
