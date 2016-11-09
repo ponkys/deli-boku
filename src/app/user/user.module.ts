@@ -11,7 +11,7 @@ import { UserService } from './user.service';
 
 //components
 //import { UsersComponent } from './users.component';
-import { UsersListComponent } from './users-list.component';
+import { UsersListComponent } from './users-list/users-list.component';
 
 @NgModule({
   imports: [

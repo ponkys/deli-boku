@@ -8,7 +8,7 @@ import { SubscribersListComponent } from './subscribers-list/subscribers-list.co
 import { BasicLocationMapComponent } from './basic-location-map/basic-location-map.component';
 import { LoginComponent } from './user/login/login.component';
 //delete when refactor
-import { UsersListComponent } from './user/users-list.component';
+import { UsersListComponent } from './user/users-list/users-list.component';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 
 @NgModule({
