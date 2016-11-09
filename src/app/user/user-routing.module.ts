@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 //Components
-import { UsersComponent } from './users.component';
+//import { UsersComponent } from './users.component';
+import { UsersListComponent } from './users-list.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 
 @NgModule({

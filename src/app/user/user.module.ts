@@ -10,7 +10,8 @@ import { UsersRoutingModule } from './user-routing.module';
 import { UserService } from './user.service';
 
 //components
-import { UsersComponent } from './users.component';
+//import { UsersComponent } from './users.component';
+import { UsersListComponent } from './users-list.component';
 
 @NgModule({
   imports: [

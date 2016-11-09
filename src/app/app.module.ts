@@ -32,7 +32,7 @@ import { BasicLocationMapStyleDirective } from './basic-location-map/basic-locat
 //delete
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserService } from './user/user.service';
-import { UsersComponent } from './user/users.component';
+import { UsersListComponent } from './user/users-list.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +49,7 @@ import { UsersComponent } from './user/users.component';
     LoginComponent,
     //delete
     UserDetailComponent,
-    UsersComponent
+    UsersListComponent
   ],
   imports: [
     BrowserModule,

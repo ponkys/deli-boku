@@ -6,10 +6,10 @@ import { UserService } from './user.service';
 
 @Component({
   selector: 'my-users',
-  templateUrl: './users.component.html',
-  styleUrls: [ './users.component.css' ]
+  templateUrl: './users-list.component.html',
+  styleUrls: [ './users-list.component.css' ]
 })
-export class UsersComponent implements OnInit {
+export class UsersListComponent implements OnInit {
   users: User[];
   selectedUser: User;
 

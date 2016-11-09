@@ -8,7 +8,7 @@ import { SubscribersListComponent } from './subscribers-list/subscribers-list.co
 import { BasicLocationMapComponent } from './basic-location-map/basic-location-map.component';
 import { LoginComponent } from './user/login/login.component';
 //delete when refactor
-import { UsersComponent } from './user/users.component';
+import { UsersListComponent } from './user/users-list.component';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 
 @NgModule({
@@ -22,7 +22,7 @@ import { UserDetailComponent } from './user/user-detail/user-detail.component';
       { path: 'where',  component: BasicLocationMapComponent },
       { path: 'login',  component: LoginComponent },
       //delete when refactor
-      { path: 'users',  component: UsersComponent },
+      { path: 'users',  component: UsersListComponent },
       { path: 'detail/:userName', component: UserDetailComponent }
 
       
