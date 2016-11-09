@@ -11,22 +11,28 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { SubscriberFormComponent } from './subscriber-form/subscriber-form.component';
 import { HeaderComponent } from './header/header.component';
-import { LoginComponent } from './user/login/login.component';
-import { SubscribersListComponent } from './subscribers-list/subscribers-list.component';
 import { AboutComponent } from './about/about.component';
 import { WatchFreeComponent } from './watch-free/watch-free.component';
+// users components due to direct route
+import { LoginComponent } from './user/login/login.component';
+// I should decide where to move this
+import { SubscribersListComponent } from './subscribers-list/subscribers-list.component';
+
 
 //services
 import { SubscribeService } from './subscribe.service';
 
 //routing
 import { AppRoutingModule }     from './app-routing.module';
-import { UserRoutingModule }     from './user/user-routing.module';
 
 //maps
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { BasicLocationMapComponent } from './basic-location-map/basic-location-map.component';
 import { BasicLocationMapStyleDirective } from './basic-location-map/basic-location-map-style.directive';
+//delete
+import { UserDetailComponent } from './user/user-detail/user-detail.component';
+import { UserService } from './user/user.service';
+import { UsersComponent } from './user/users.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +45,11 @@ import { BasicLocationMapStyleDirective } from './basic-location-map/basic-locat
     WatchFreeComponent,
     BasicLocationMapComponent,
     BasicLocationMapStyleDirective,
-    LoginComponent
+    //check this later module direct due to route
+    LoginComponent,
+    //delete
+    UserDetailComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
@@ -47,14 +57,13 @@ import { BasicLocationMapStyleDirective } from './basic-location-map/basic-locat
     HttpModule,
     JsonpModule,
     //routing
-    UserRoutingModule,
     AppRoutingModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCrr2PKXEHx2XNvk0v8T_KAKxzmsylOjLQ'
     }),
     UserModule 
   ],
-  providers: [SubscribeService],
+  providers: [SubscribeService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

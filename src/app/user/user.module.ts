@@ -4,13 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { JsonpModule, HttpModule } from '@angular/http';
 
 //routing
-import { UserRoutingModule } from './user-routing.module';
+import { UsersRoutingModule } from './user-routing.module';
 
 //services
-
+import { UserService } from './user.service';
 
 //components
-import { UserComponent } from './user.component';
+import { UsersComponent } from './users.component';
 
 @NgModule({
   imports: [
@@ -19,11 +19,11 @@ import { UserComponent } from './user.component';
     HttpModule,
     JsonpModule,
     //routing
-    UserRoutingModule 
+    UsersRoutingModule 
   ],
   declarations: [
-    UserComponent
+    //UsersComponent
   ],
-  providers:[]
+  providers:[UserService]
 })
 export class UserModule { }
