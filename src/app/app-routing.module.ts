@@ -23,7 +23,7 @@ import { UserDetailComponent } from './user/user-detail/user-detail.component';
       { path: 'login',  component: LoginComponent },
       //delete when refactor
       { path: 'users',  component: UsersComponent },
-      { path: 'detail/:id', component: UserDetailComponent }
+      { path: 'detail/:userName', component: UserDetailComponent }
 
       
     ])

@@ -21,8 +21,8 @@ export class UserDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.forEach((params: Params) => {
-      let id = +params['id'];
-      this.userService.getUser(id)
+      let userName = params['userName'];
+      this.userService.getUserUserName(userName)
         .then(user => this.user = user);
     });
   }

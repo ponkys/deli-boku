@@ -18,4 +18,9 @@ export class UserService {
     return this.getUsers()
                .then(users => users.find(user => user.id === id));
   }
+
+  getUserUserName(userName: string): Promise<User> {
+    return this.getUsers()
+               .then(users => users.find(user => user.userName === userName));
+  }
 }
