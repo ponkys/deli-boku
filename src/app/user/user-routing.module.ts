@@ -23,7 +23,10 @@ import { UserDetailResolve }   from './user-detail-resolve.service';
             children: [
               {
                 path: ':userName',
-                component: UserDetailComponent 
+                component: UserDetailComponent,
+                 resolve: {
+                  crisis: UserDetailResolve
+                }
               },
               {
                 path: '',

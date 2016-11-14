@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-users',
   template: `
-    <h2>CRISIS CENTER</h2>
-    <router-outlet></router-outlet>
+    <div class="col-8 col-m-10 group center">
+      <h2>USERS</h2>
+      <router-outlet></router-outlet>
+    </div>
   `,
   styleUrls: ['./users.component.css']
 })
