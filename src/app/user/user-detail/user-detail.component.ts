@@ -42,6 +42,7 @@ import  { UserService } from '../user.service';
     ])
   ]
 })
+
 export class UserDetailComponent implements OnInit {
   //animations
   @HostBinding('@routeAnimation') get routeAnimation() {
