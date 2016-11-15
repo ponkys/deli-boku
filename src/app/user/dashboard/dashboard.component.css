@@ -4,7 +4,7 @@ li {
 
 a {
     text-decoration: none;
-    color: #3c3c3c;
+    color: #fff;
     background: #FFA328;
     margin-bottom: 8px;
     border-radius: 20px;
@@ -17,6 +17,12 @@ a {
 
 a:hover{
     background-color: #ffaf44; 
+}
+
+a.active {
+    background-color: #fff;
+    color: #0ADEFF;
+    cursor: default;
 }
 
 .flex {

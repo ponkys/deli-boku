@@ -28,6 +28,7 @@ import { AppRoutingModule }     from './app-routing.module';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { BasicLocationMapComponent } from './basic-location-map/basic-location-map.component';
 import { BasicLocationMapStyleDirective } from './basic-location-map/basic-location-map-style.directive';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { BasicLocationMapStyleDirective } from './basic-location-map/basic-locat
     BasicLocationMapComponent,
     BasicLocationMapStyleDirective,
     //check this later module direct due to route
-    LoginComponent
+    LoginComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

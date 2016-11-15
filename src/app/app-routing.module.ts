@@ -6,6 +6,7 @@ import { AboutComponent } from './about/about.component';
 import { WatchFreeComponent } from './watch-free/watch-free.component';
 import { BasicLocationMapComponent } from './basic-location-map/basic-location-map.component';
 import { LoginComponent } from './user/login/login.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 import { PreloadSelectedModules } from './selective-preload-strategy';
 
@@ -25,7 +26,7 @@ import { PreloadSelectedModules } from './selective-preload-strategy';
           preload: true
         }
       },
-      //{ path: '**', component: PageNotFoundComponent } Create this component    
+      { path: '**', component: PageNotFoundComponent }  
     ],
     { preloadingStrategy: PreloadSelectedModules }
     )
