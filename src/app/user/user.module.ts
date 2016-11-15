@@ -15,6 +15,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsersListComponent } from './users-list/users-list.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UserHomeComponent } from './user-home/user-home.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 // subscribers
 import { SubscribersListComponent } from '../subscribers-list/subscribers-list.component';
 
@@ -33,6 +34,7 @@ import { SubscribersListComponent } from '../subscribers-list/subscribers-list.c
     UsersListComponent,
     UserDetailComponent,
     UserHomeComponent,
+    UserDashboardComponent,
     SubscribersListComponent
   ],
   providers:[ UserService, SubscribeService ]

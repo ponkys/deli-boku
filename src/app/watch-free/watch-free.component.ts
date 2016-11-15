@@ -8,7 +8,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./watch-free.component.css']
 })
 export class WatchFreeComponent implements OnInit {
-  trustedUrl: any
+  public trustedUrl: any;
 
   constructor(private sanitizer: DomSanitizer) {
 

@@ -8,6 +8,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UserHomeComponent } from './user-home/user-home.component';
 
 import { SubscribersListComponent } from '../subscribers-list/subscribers-list.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 
 //providers
 import { UserDetailResolve }   from './user-detail-resolve.service';
@@ -19,6 +20,11 @@ import { UserDetailResolve }   from './user-detail-resolve.service';
         path: '',
         component: DashboardComponent,
         children: [
+          {
+            path: '',
+                component: UserDashboardComponent
+            
+          },
           {
             path: 'users',
             component: UsersListComponent,
