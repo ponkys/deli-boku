@@ -29,7 +29,6 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
 import { BasicLocationMapComponent } from './basic-location-map/basic-location-map.component';
 import { BasicLocationMapStyleDirective } from './basic-location-map/basic-location-map-style.directive';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -43,8 +42,7 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
     BasicLocationMapStyleDirective,
     //check this later module direct due to route
     LoginComponent,
-    PageNotFoundComponent,
-    UserDashboardComponent
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
