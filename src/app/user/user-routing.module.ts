@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 //Components
-import { UsersComponent } from './users/users.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsersListComponent } from './users-list/users-list.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UserHomeComponent } from './user-home/user-home.component';
+
+import { SubscribersListComponent } from '../subscribers-list/subscribers-list.component';
 
 //providers
 import { UserDetailResolve }   from './user-detail-resolve.service';
@@ -15,7 +17,7 @@ import { UserDetailResolve }   from './user-detail-resolve.service';
      RouterModule.forChild([
       {
         path: '',
-        component: UsersComponent,
+        component: DashboardComponent,
         children: [
           {
             path: '',
@@ -33,6 +35,10 @@ import { UserDetailResolve }   from './user-detail-resolve.service';
                 component: UserHomeComponent
               }
             ]
+          },
+          {
+            path: 'subscribers',
+            component: SubscribersListComponent
           }
         ]
       }
