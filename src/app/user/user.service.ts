@@ -8,12 +8,6 @@ export class UserService {
     return Promise.resolve(USERS);
   }
 
-  getUsersSlowly(): Promise<User[]> {
-    return new Promise<User[]>(resolve =>
-      setTimeout(resolve, 2000)) // delay 2 seconds
-      .then(() => this.getUsers());
-  }
-
   getUserUserName(userName: string): Promise<User> {
     return this.getUsers()
                .then(users => users.find(user => user.userName === userName));

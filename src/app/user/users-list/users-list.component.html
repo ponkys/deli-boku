@@ -1,5 +1,5 @@
 <router-outlet></router-outlet>
-<h2>My Users</h2>
+<h2 class="bottom-line">My Users</h2>
 <ul class="users">
   <li *ngFor="let user of users | async"
     [class.selected]="isSelected(user)"
