@@ -17,12 +17,11 @@ import { SubscriberFormComponent } from './subscriber-form/subscriber-form.compo
 import { LoginComponent } from './user/login/login.component';
 // I should decide where to move this
 
-
-
 //services
 
 //routing
 import { AppRoutingModule }     from './app-routing.module';
+import { LoginRoutingModule }   from './user/login/login-routing.module';
 
 //maps
 import { AgmCoreModule } from 'angular2-google-maps/core';
@@ -40,9 +39,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     WatchFreeComponent,
     BasicLocationMapComponent,
     BasicLocationMapStyleDirective,
+    PageNotFoundComponent,
     //check this later module direct due to route
-    LoginComponent,
-    PageNotFoundComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +49,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     HttpModule,
     JsonpModule,
     //routing
+    LoginRoutingModule,
     AppRoutingModule,
+    
+    //Maps
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCrr2PKXEHx2XNvk0v8T_KAKxzmsylOjLQ'
     }),

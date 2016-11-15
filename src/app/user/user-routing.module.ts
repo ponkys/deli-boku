@@ -24,12 +24,13 @@ import { UserDetailResolve }   from './user-detail-resolve.service';
         children: [
           {
             path: '',
-                component: UserDashboardComponent
+            component: UserDashboardComponent
             
           },
           {
             path: 'users',
             component: UsersListComponent,
+            canActivateChild: [AuthGuard],
             children: [
               {
                 path: ':userName',
