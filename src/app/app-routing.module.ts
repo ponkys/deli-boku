@@ -4,7 +4,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AboutComponent } from './about/about.component';
 import { WatchFreeComponent } from './watch-free/watch-free.component';
-import { SubscribersListComponent } from './subscribers-list/subscribers-list.component';
 import { BasicLocationMapComponent } from './basic-location-map/basic-location-map.component';
 import { LoginComponent } from './user/login/login.component';
 
@@ -20,7 +19,7 @@ import { PreloadSelectedModules } from './selective-preload-strategy';
       { path: 'where',  component: BasicLocationMapComponent },
       { path: 'login',  component: LoginComponent },
       {
-        path: 'users',
+        path: 'dashboard',
         loadChildren: 'app/user/user.module#UserModule',
         data: {
           preload: true

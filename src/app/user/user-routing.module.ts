@@ -20,7 +20,7 @@ import { UserDetailResolve }   from './user-detail-resolve.service';
         component: DashboardComponent,
         children: [
           {
-            path: '',
+            path: 'users',
             component: UsersListComponent,
             children: [
               {
