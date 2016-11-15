@@ -1,14 +1,10 @@
+<router-outlet></router-outlet>
 <h2>My Users</h2>
 <ul class="users">
-  <li *ngFor="let user of users"
-    [class.selected]="user === selectedUser"
+  <li *ngFor="let user of users | async"
+    [class.selected]="isSelected(user)"
     (click)="onSelect(user)">
     <span class="badge">{{user.id}}</span> {{user.userName}}
   </li>
 </ul>
-<div *ngIf="selectedUser">
-  <h2>
-    {{selectedUser.userName | uppercase}} is my user
-  </h2>
-  <button (click)="gotoDetail()" class="btn action-button">View Details</button>
-</div>
+<app-subscribers-list></app-subscribers-list>

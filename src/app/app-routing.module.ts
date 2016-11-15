@@ -26,7 +26,8 @@ import { PreloadSelectedModules } from './selective-preload-strategy';
         data: {
           preload: true
         }
-      }     
+      },
+      //{ path: '**', component: PageNotFoundComponent } Create this component    
     ],
     { preloadingStrategy: PreloadSelectedModules }
     )

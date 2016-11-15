@@ -12,6 +12,7 @@ import { UserService }  from '../user.service';
 })
 export class UserDetailComponent implements OnInit {
   user: User;
+  userName: String;
 
   constructor(
     private userService: UserService,
@@ -19,11 +20,19 @@ export class UserDetailComponent implements OnInit {
     private location: Location
   ) {}
 
-  ngOnInit(): void {
-    this.route.params.forEach((params: Params) => {
-      let userName = params['userName'];
-      this.userService.getUserUserName(userName)
-        .then(user => this.user = user);
+  // ngOnInit(): void {
+  //   this.route.params.forEach((params: Params) => {
+  //     let userName = params['userName'];
+  //     this.userService.getUserUserName(userName)
+  //       .then(user => this.user = user);
+  //   });
+  // }
+  
+  //try
+  ngOnInit() {
+    this.route.data.forEach((data: { user: User }) => {
+      this.userName = data.user.userName;
+      this.user = data.user;
     });
   }
 

@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router, Params } from '@angular/router';
 
 import { User } from '../user';
 import { UserService } from '../user.service';
+
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/switchMap';
 
 @Component({
   selector: 'my-users',
@@ -10,26 +13,31 @@ import { UserService } from '../user.service';
   styleUrls: [ './users-list.component.css' ]
 })
 export class UsersListComponent implements OnInit {
-  users: User[];
-  selectedUser: User;
+  users: Observable<User[]>;
+  selectedUserName: string;
 
   constructor(
     private router: Router,
+    private route: ActivatedRoute,
     private userService: UserService) { }
 
-  getUsers(): void {
-    this.userService.getUsers().then(users => this.users = users);
+  isSelected(user: User) {
+    return user.userName === this.selectedUserName;
   }
-
-  ngOnInit(): void {
-    this.getUsers();
+  
+  ngOnInit() {
+    this.users = this.route.params
+      .switchMap((params: Params) => {
+        this.selectedUserName = params['userName'];
+        return this.userService.getUsers();
+      });
   }
 
   onSelect(user: User): void {
-    this.selectedUser = user;
+    this.selectedUserName = user.userName;
+
+    // Navigate with relative link
+    this.router.navigate([user.userName], { relativeTo: this.route });
   }
 
-  gotoDetail(): void {
-    this.router.navigate(['/detail', this.selectedUser.userName]);
-  }
 }

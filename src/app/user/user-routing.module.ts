@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 //Components
 import { UsersComponent } from './users/users.component';
@@ -24,8 +24,8 @@ import { UserDetailResolve }   from './user-detail-resolve.service';
               {
                 path: ':userName',
                 component: UserDetailComponent,
-                 resolve: {
-                  crisis: UserDetailResolve
+                resolve: {
+                  user: UserDetailResolve
                 }
               },
               {
