@@ -16,7 +16,6 @@ import { PreloadSelectedModules } from './selective-preload-strategy';
       { path: '', redirectTo: '/welcome', pathMatch: 'full' },
       { path: 'welcome',  component: WelcomeComponent },
       { path: 'about',  component: AboutComponent },
-      { path: 'subscribers',  component: SubscribersListComponent },
       { path: 'watch-free',  component: WatchFreeComponent },
       { path: 'where',  component: BasicLocationMapComponent },
       { path: 'login',  component: LoginComponent },

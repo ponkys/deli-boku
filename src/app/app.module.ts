@@ -9,18 +9,17 @@ import { UserModule  } from './user/user.module';
 //components
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { SubscriberFormComponent } from './subscriber-form/subscriber-form.component';
 import { HeaderComponent } from './header/header.component';
 import { AboutComponent } from './about/about.component';
 import { WatchFreeComponent } from './watch-free/watch-free.component';
+import { SubscriberFormComponent } from './subscriber-form/subscriber-form.component';
 // users components due to direct route
 import { LoginComponent } from './user/login/login.component';
 // I should decide where to move this
-import { SubscribersListComponent } from './subscribers-list/subscribers-list.component';
+
 
 
 //services
-import { SubscribeService } from './subscribe.service';
 
 //routing
 import { AppRoutingModule }     from './app-routing.module';
@@ -34,9 +33,8 @@ import { BasicLocationMapStyleDirective } from './basic-location-map/basic-locat
   declarations: [
     AppComponent,
     WelcomeComponent,
-    SubscriberFormComponent,
     HeaderComponent,
-    SubscribersListComponent,
+    SubscriberFormComponent,
     AboutComponent,
     WatchFreeComponent,
     BasicLocationMapComponent,
@@ -56,7 +54,7 @@ import { BasicLocationMapStyleDirective } from './basic-location-map/basic-locat
     }),
     UserModule 
   ],
-  providers: [SubscribeService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
