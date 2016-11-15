@@ -52,6 +52,7 @@ import { BasicLocationMapStyleDirective } from './basic-location-map/basic-locat
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCrr2PKXEHx2XNvk0v8T_KAKxzmsylOjLQ'
     }),
+    //child modules
     UserModule 
   ],
   providers: [],
