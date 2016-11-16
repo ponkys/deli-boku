@@ -1,6 +1,7 @@
 <router-outlet></router-outlet>
 <h2 class="bottom-line">My Users</h2>
 <ul class="users">
+  <spinner [visible]="usersLoading"></spinner>
   <li *ngFor="let user of users"
     [class.selected]="isSelected(user)"
     (click)="onSelect(user)">

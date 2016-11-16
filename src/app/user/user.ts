@@ -1,10 +1,10 @@
 export interface User {
-  _id: string;
-  userName: string;
+  _id: string,
+  userName: string,
   firstName: string,
   lastName: string,
   middleNameInitial: string,
-  password: string;
-  role: string
+  password: string,
+  role: string,
   email: string,
 }

@@ -18,7 +18,8 @@ import { UserHomeComponent } from './user-home/user-home.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 // subscribers
 import { SubscribersListComponent } from '../subscribers-list/subscribers-list.component';
-
+//spinner
+import { SpinnerComponent } from '../spinner/spinner.component';
 
 @NgModule({
   imports: [
@@ -35,7 +36,8 @@ import { SubscribersListComponent } from '../subscribers-list/subscribers-list.c
     UserDetailComponent,
     UserHomeComponent,
     UserDashboardComponent,
-    SubscribersListComponent
+    SubscribersListComponent,
+    SpinnerComponent
   ],
   providers:[ UserService, SubscribeService ]
 })

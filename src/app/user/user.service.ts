@@ -45,6 +45,33 @@ export class UserService {
     return this.getUsers()
                .map(users => users.find(user => user.userName === userName));
   }
+
+   updateUser (
+              _id: string,
+              userName: string,
+              firstName: string,
+              lastName: string,
+              middleNameInitial: string,
+              password: string,
+              role: string,
+              email: string): Observable<User> {
+    let headers = new Headers({   
+                                'Content-Type': 'application/json' 
+                              });
+    let options = new RequestOptions({ headers: headers });
+
+    return this._http.put(this.userUrl, { 
+                                        _id,
+                                        userName,
+                                        firstName,
+                                        lastName,
+                                        middleNameInitial,
+                                        password,
+                                        role,
+                                        email }, options)
+                    .map(this.extractData)
+                    .catch(this.handleError);
+  }
 }
 
 

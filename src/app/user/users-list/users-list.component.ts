@@ -16,6 +16,7 @@ export class UsersListComponent implements OnInit {
   users: User[];
   selectedUserName: string;
   errorMessage: string;
+  usersLoading = true;
 
   constructor(
     private router: Router,
@@ -37,10 +38,11 @@ export class UsersListComponent implements OnInit {
   ngOnInit() { this.getUsers(); }
 
   getUsers() {
+    //this.users = this.route.params
     this.userService.getUsers()
                      .subscribe(
                        users => {
-                         //this.isLoading = false;
+                         this.usersLoading  = false;
                          this.users = users
                        },
                        error =>  this.errorMessage = <any>error);

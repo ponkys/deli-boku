@@ -10,7 +10,7 @@ import { SubscribeService } from '../subscribe.service';
 })
 export class SubscribersListComponent implements OnInit {
   errorMessage: string;
-  isLoading = true;
+  subscribersLoading = true;
 
   subscribers: Subscriber[];
 
@@ -22,7 +22,7 @@ export class SubscribersListComponent implements OnInit {
     this.subscribeService.getSubscribers()
                      .subscribe(
                        subscribers => {
-                         this.isLoading = false;
+                         this.subscribersLoading = false;
                          this.subscribers = subscribers
                        },
                        error =>  this.errorMessage = <any>error);
