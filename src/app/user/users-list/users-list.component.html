@@ -1,9 +1,9 @@
 <router-outlet></router-outlet>
 <h2 class="bottom-line">My Users</h2>
 <ul class="users">
-  <li *ngFor="let user of users | async"
+  <li *ngFor="let user of users"
     [class.selected]="isSelected(user)"
     (click)="onSelect(user)">
-    <span class="badge">{{user.id}}</span> {{user.userName}}
+    <span class="badge">{{user._id}}</span> {{user.userName}}
   </li>
 </ul>

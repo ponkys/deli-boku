@@ -16,9 +16,8 @@ export class HeaderComponent implements OnInit {
     this.authService.login().subscribe(() => {
       if (this.authService.isLoggedIn) {
         this.showDashboard = !this.showDashboard
-        console.log(this.showDashboard)
+        //console.log(this.showDashboard)
       } 
-      //console.log(this.showDashboard)
     });
   }
 

@@ -1,6 +1,23 @@
 import { User } from './user';
 
 export var USERS: User[] = [
-  {id: 1, userName: 'Manuel', password: 'test', role: 'admin'},
-  {id: 2, userName: 'Diego', password: 'test', role: 'admin'}
+   {
+    _id: "2",
+    userName: "manuel",
+    firstName: "Manuel",
+    lastName: "Contreras",
+    middleNameInitial: "F",
+    password: "test",
+    role: "admin",
+    email: "contreras.manuel.f@gmail.com"},
+  {
+    _id: "1",
+    userName: "diego",
+    firstName: "Diego",
+    lastName: "Mosquera",
+    middleNameInitial: "M",
+    password: "test",
+    role: "admin",
+    email: "diego.mosquera.soto@gmail.com"
+  }
 ];

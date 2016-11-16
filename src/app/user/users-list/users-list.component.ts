@@ -13,8 +13,9 @@ import 'rxjs/add/operator/switchMap';
   styleUrls: [ './users-list.component.css' ]
 })
 export class UsersListComponent implements OnInit {
-  users: Observable<User[]>;
+  users: User[];
   selectedUserName: string;
+  errorMessage: string;
 
   constructor(
     private router: Router,
@@ -25,12 +26,24 @@ export class UsersListComponent implements OnInit {
     return user.userName === this.selectedUserName;
   }
   
-  ngOnInit() {
-    this.users = this.route.params
-      .switchMap((params: Params) => {
-        this.selectedUserName = params['userName'];
-        return this.userService.getUsers();
-      });
+  // ngOnInit() {
+  //   this.users = this.route.params
+  //     .switchMap((params: Params) => {
+  //       this.selectedUserName = params['userName'];
+  //       return this.userService.getUsers();
+  //     });
+  // }
+
+  ngOnInit() { this.getUsers(); }
+
+  getUsers() {
+    this.userService.getUsers()
+                     .subscribe(
+                       users => {
+                         //this.isLoading = false;
+                         this.users = users
+                       },
+                       error =>  this.errorMessage = <any>error);
   }
 
   onSelect(user: User): void {
@@ -41,3 +54,8 @@ export class UsersListComponent implements OnInit {
   }
 
 }
+
+
+
+
+  

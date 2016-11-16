@@ -24,6 +24,7 @@ export class SubscribeService {
     return body;
     //return body.data || { };
   }
+  
   constructor(private _http: Http) { }
 
   getSubscribers(): Observable<Subscriber[]> {
@@ -33,7 +34,9 @@ export class SubscribeService {
   }
 
   addSubscriber (email: string): Observable<Subscriber> {
-    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let headers = new Headers({   
+                                'Content-Type': 'application/json' 
+                              });
     let options = new RequestOptions({ headers: headers });
 
     return this._http.post(this.subscriberUrl, { email }, options)
