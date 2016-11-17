@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Observable }   from 'rxjs/Observable';
 import '../rxjs-operators';
@@ -8,17 +8,25 @@ import '../rxjs-operators';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit{
 
-  showDashboard: boolean = true;
+  inLog;
 
   constructor(public authService: AuthService) {
-    this.authService.login().subscribe(() => {
-      if (this.authService.isLoggedIn) {
-        this.showDashboard = !this.showDashboard
-        //console.log(this.showDashboard)
-      } 
-    });
+    // this.authService.login().subscribe(() => {
+      
+    //     this.inLog = this.authService.isLoggedIn
+  
+    // });
+    this.inLog = this.authService.isLoggedIn ;
+    if (this.authService.login()) {
+      this.inLog = this.authService.isLoggedIn
+     }
+  }
+
+  showDashboard(userLoggedIn: boolean){
+    this.inLog = userLoggedIn;
+    console.log(this.inLog)
   }
 
   ngOnInit() {

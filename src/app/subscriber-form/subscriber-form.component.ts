@@ -12,7 +12,6 @@ export class SubscriberFormComponent implements OnInit {
   errorMessage: string;
   active = true;
   subscribers: Subscriber[];
-  mode = 'Observable';
 
   sent = false;
   sentDelete = true;

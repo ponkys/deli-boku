@@ -1,4 +1,4 @@
-import { Component }   from '@angular/core';
+import { Component, Output, EventEmitter }   from '@angular/core';
 import { Router }      from '@angular/router';
 import { AuthService } from '../../auth.service';
 
@@ -11,7 +11,11 @@ export class LoginComponent {
 
   message: string;
 
-  constructor(public authService: AuthService, public router: Router) {
+  @Output() userLoggedIn: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+  constructor(public authService: AuthService, 
+              public router: Router
+              ) {
     this.setMessage();
   }
   setMessage() {
@@ -23,6 +27,8 @@ export class LoginComponent {
     this.authService.login().subscribe(() => {
       this.setMessage();
       if (this.authService.isLoggedIn) {
+        this.userLoggedIn.emit(true);
+        
         // Get the redirect URL from our auth service
         // If no redirect has been set, use the default
         let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/dashboard';
