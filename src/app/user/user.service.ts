@@ -6,6 +6,7 @@ import {  Headers,
           RequestOptions, 
           Response }    from '@angular/http';
 import { Observable }   from 'rxjs/Observable';
+import { AuthService } from '../auth.service';
 import '../rxjs-operators';
 
 @Injectable()
@@ -33,10 +34,14 @@ export class UserService {
     return Observable.throw(errMsg);
   }
 
-  constructor(private _http: Http) { }
+  constructor(private _http: Http,
+              private _authService: AuthService) { }
 
   getUsers(): Observable<User[]> {
-    return this._http.get(this.userUrl)
+    // add authorization header with jwt token
+    let headers = new Headers({ 'Authorization': 'Bearer ' + this._authService.token });
+    let options = new RequestOptions({ headers: headers });
+    return this._http.get(this.userUrl, options)
                     .map(this.extractData)
                     .catch(this.handleError);
   }
@@ -72,6 +77,7 @@ export class UserService {
                     .map(this.extractData)
                     .catch(this.handleError);
   }
+
 }
 
 

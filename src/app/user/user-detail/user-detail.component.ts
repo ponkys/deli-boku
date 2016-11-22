@@ -60,6 +60,7 @@ export class UserDetailComponent implements OnInit {
   //Initiate imported variables
   user: User;
   userName: String;
+  errorMessage: String;
 
   constructor(
     private userService: UserService,
@@ -88,6 +89,39 @@ export class UserDetailComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
+
+  // updateUser(
+  //   _id: string,
+  //   userName: string,
+  //   firstName: string,
+  //   lastName: string,
+  //   middleNameInitial: string,
+  //   password: string,
+  //   role: string,
+  //   email: string){ 
+  //   if (
+  //     !_id,
+  //     !userName,
+  //     !firstName,
+  //     !lastName,
+  //     !middleNameInitial,
+  //     !password,
+  //     !role,
+  //     !email){ return;}
+  //   this.userService.updateUser(
+  //     _id,
+  //     userName,
+  //     firstName,
+  //     lastName,
+  //     middleNameInitial,
+  //     password,
+  //     role,
+  //     email)
+  //   .subscribe(
+  //     //user => this.userService.push(user),
+  //     error => this.errorMessage = <any>error
+  //   ); 
+  // }
 
   cancel() {
     this.gotoUsers();

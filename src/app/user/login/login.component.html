@@ -1,8 +1,31 @@
-<div class="col-8 col-m-10 about group center bottom-line">
-    <h2>LOGIN</h2>
-    <p>{{message}}</p>
-    <p>
-      <button (click)="login()"  *ngIf="!authService.isLoggedIn">Login</button>
-      <button (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
-    </p>
+<div class="col-8 col-m-10 about group center text-align-center bottom-line">
+  <h2>LOGIN</h2>
+  <p>{{message}}</p>
+  <form *ngIf="!authService.isLoggedIn" (ngSubmit)="onSubmit()" #heroForm="ngForm">
+    <div class="form-group">
+      <label for="userName">Username</label><br/>
+      <input  name=“userName”
+              #userName
+              type="text" 
+              placeholder="username" 
+              class="form-control" 
+              id="userName"
+              required/>
+    </div>
+        
+    <div class="form-group">
+      <label for="password">Password</label><br/>
+      <input  name=“password”
+              #password
+              type="password" 
+              placeholder="Password" 
+              class="form-control" 
+              id="password" 
+              required/>
+    </div>
+    <button (click)="login(userName.value, password.value)" type="submit" class="btn btn-default" *ngIf="!authService.isLoggedIn" [disabled]="loading">Login</button>
+  </form>
+  <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+  <button (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
 </div>
+

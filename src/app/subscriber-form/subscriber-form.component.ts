@@ -32,7 +32,7 @@ export class SubscriberFormComponent implements OnInit {
     this.subscribeService.addSubscriber(email)
                       .subscribe(
                     //    // I dont need this as I'm not expectong anything it is just a subscribe.
-                        subscribers  => this.subscribers.push(subscribers),
+                        subscriber  => this.subscribers.push(subscriber),
                         error =>  this.errorMessage = <any>error);
   }
 }
