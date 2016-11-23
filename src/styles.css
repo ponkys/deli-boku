@@ -5,13 +5,6 @@ body {
     line-height: 1.5em;
     -webkit-font-smoothing: antialiased;
 
-    background: linear-gradient(270deg, white, #fff8fd);
-    background-size: 400% 400%;
-
-    -webkit-animation: AnimationName 60s ease infinite;
-    -moz-animation: AnimationName 60s ease infinite;
-    -o-animation: AnimationName 60s ease infinite;
-    animation: AnimationName 60s ease infinite;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -44,26 +37,6 @@ h2, h3, h4, h5, h6 {
     letter-spacing: 0.05rem;
 }
 
-@-webkit-keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-@-moz-keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-@-o-keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-@keyframes AnimationName { 
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
 
 .text-align-center {
     text-align: center;

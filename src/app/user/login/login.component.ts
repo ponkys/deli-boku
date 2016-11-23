@@ -11,7 +11,6 @@ import { User } from '../user';
 
 export class LoginComponent implements OnInit {
   
-  message: string;
   users: User[];
   loading = false;
   error = '';
@@ -19,20 +18,14 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthService, 
               private router: Router
               ) {
-    this.setMessage();
   }
 
   ngOnInit(){
      this.authService.logout();
   }
-  setMessage() {
-    this.message = 'Logged ' + (this.authService.isLoggedIn ? 'in' : 'out');
-  }
 
   login(userName: string, password: string) {
-    this.message = 'Trying to log in ...';
     this.loading = true;
-    if (!userName && !password) { return this.message="fill the forms"; }
     this.authService.login(userName, password)
       .subscribe(result => {
           if (result === true) {
@@ -50,7 +43,6 @@ export class LoginComponent implements OnInit {
 
   logout() {
     this.authService.logout();
-    this.setMessage();
   }
   
 }

@@ -1,25 +1,27 @@
-import { NgModule } from '@angular/core';
-import { CommonModule }   from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { JsonpModule, HttpModule } from '@angular/http';
+import { NgModule }               from '@angular/core';
+import { CommonModule }           from '@angular/common';
+import { FormsModule }            from '@angular/forms';
+import { JsonpModule, 
+         HttpModule }             from '@angular/http';
 
 //routing
-import { UsersRoutingModule } from './user-routing.module';
+import { UsersRoutingModule }     from './user-routing.module';
 
 //services
-import { UserService } from './user.service';
-import { SubscribeService } from '../subscribe.service';
+import { UserService }            from './user.service';
+import { SubscribeService }       from '../subscribe.service';
 
 //components
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { UsersListComponent } from './users-list/users-list.component';
-import { UserDetailComponent } from './user-detail/user-detail.component';
-import { UserHomeComponent } from './user-home/user-home.component';
+import { DashboardComponent }     from './dashboard/dashboard.component';
+import { UsersListComponent }     from './users-list/users-list.component';
+import { UserDetailComponent }    from './user-detail/user-detail.component';
+import { UserHomeComponent }      from './user-home/user-home.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+//shared Module
+import { SharedModule }           from '../shared/shared.module';
 // subscribers
 import { SubscribersListComponent } from '../subscribers-list/subscribers-list.component';
-//spinner
-import { SpinnerComponent } from '../spinner/spinner.component';
+
 
 @NgModule({
   imports: [
@@ -28,7 +30,8 @@ import { SpinnerComponent } from '../spinner/spinner.component';
     HttpModule,
     JsonpModule,
     //routing
-    UsersRoutingModule 
+    UsersRoutingModule,
+    SharedModule 
   ],
   declarations: [
     DashboardComponent,
@@ -36,8 +39,7 @@ import { SpinnerComponent } from '../spinner/spinner.component';
     UserDetailComponent,
     UserHomeComponent,
     UserDashboardComponent,
-    SubscribersListComponent,
-    SpinnerComponent
+    SubscribersListComponent
   ],
   providers:[ UserService, SubscribeService ]
 })
