@@ -37,7 +37,8 @@ export class AuthService {
 
 
     var reqObj = { userName: userName, password: password }
-    console.log(reqObj);
+    //Console log to debug: I can see the data I'am sending
+    //console.log(reqObj);
     return this.http.post(this._authUrl, reqObj, options)
       .map((response: Response) => {
         console.log(response)
