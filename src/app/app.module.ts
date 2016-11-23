@@ -28,6 +28,7 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
 import { BasicLocationMapComponent } from './basic-location-map/basic-location-map.component';
 import { BasicLocationMapStyleDirective } from './basic-location-map/basic-location-map-style.directive';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SharedModule }      from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
       apiKey: 'AIzaSyCrr2PKXEHx2XNvk0v8T_KAKxzmsylOjLQ'
     }),
     //child modules
-    UserModule 
+    UserModule,
+    SharedModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
