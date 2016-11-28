@@ -3,9 +3,11 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { JsonpModule, HttpModule } from '@angular/http';
 
+//routing
+import {APP_BASE_HREF} from '@angular/common';
 //modules
 import { UserModule  } from './user/user.module';
-
+import { PostsModule  } from './posts/posts.module';
 //components
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -59,9 +61,10 @@ import { SharedModule }      from './shared/shared.module';
     }),
     //child modules
     UserModule,
-    SharedModule 
+    SharedModule,
+    PostsModule
   ],
-  providers: [],
+  providers: [{provide: APP_BASE_HREF, useValue: '/'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -20,6 +20,13 @@ import { PreloadSelectedModules } from './selective-preload-strategy';
       { path: 'where',  component: BasicLocationMapComponent },
       { path: 'login',  component: LoginComponent },
       {
+        path: 'posts',
+        loadChildren: 'app/posts/posts.module#PostsModule',
+        data: {
+          preload: true
+        }
+      },
+      {
         path: 'dashboard',
         loadChildren: 'app/user/user.module#UserModule',
         data: {
