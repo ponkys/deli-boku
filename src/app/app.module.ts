@@ -15,7 +15,6 @@ import { HeaderComponent } from './header/header.component';
 import { AboutComponent } from './about/about.component';
 import { WatchFreeComponent } from './watch-free/watch-free.component';
 import { SubscriberFormComponent } from './subscriber-form/subscriber-form.component';
-// users components due to direct route
 import { LoginComponent } from './user/login/login.component';
 // I should decide where to move this
 
@@ -43,7 +42,6 @@ import { SharedModule }      from './shared/shared.module';
     BasicLocationMapComponent,
     BasicLocationMapStyleDirective,
     PageNotFoundComponent,
-    //check this later module direct due to route
     LoginComponent
   ],
   imports: [
@@ -51,18 +49,17 @@ import { SharedModule }      from './shared/shared.module';
     FormsModule,
     HttpModule,
     JsonpModule,
-    //routing
+    // routing
     LoginRoutingModule,
-    AppRoutingModule,
-    
-    //Maps
+    // Maps
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCrr2PKXEHx2XNvk0v8T_KAKxzmsylOjLQ'
     }),
-    //child modules
+    // child modules
     UserModule,
     SharedModule,
-    PostsModule
+    PostsModule,
+    AppRoutingModule,
   ],
   providers: [{provide: APP_BASE_HREF, useValue: '/'}],
   bootstrap: [AppComponent]

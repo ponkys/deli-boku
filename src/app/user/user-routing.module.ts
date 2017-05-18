@@ -18,14 +18,13 @@ import { UserDetailResolve }   from './user-detail-resolve.service';
   imports: [
      RouterModule.forChild([
       {
-        path: '',
+        path: 'dashboard',
         component: DashboardComponent,
         canActivate: [AuthGuard],
         children: [
           {
             path: '',
             component: UserDashboardComponent
-            
           },
           {
             path: 'users',

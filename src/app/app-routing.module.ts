@@ -8,39 +8,33 @@ import { BasicLocationMapComponent } from './basic-location-map/basic-location-m
 import { LoginComponent } from './user/login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
-import { PreloadSelectedModules } from './selective-preload-strategy';
+import { SelectivePreloadingStrategy } from './selective-preload-strategy';
 
 @NgModule({
   imports: [
     RouterModule.forRoot([
-      { path: '', redirectTo: '/welcome', pathMatch: 'full' },
-      { path: 'welcome',  component: WelcomeComponent },
-      { path: 'about',  component: AboutComponent },
-      { path: 'watch-free',  component: WatchFreeComponent },
-      { path: 'where',  component: BasicLocationMapComponent },
-      { path: 'login',  component: LoginComponent },
-      {
-        path: 'posts',
-        loadChildren: 'app/posts/posts.module#PostsModule',
-        data: {
-          preload: true
-        }
-      },
-      {
-        path: 'dashboard',
-        loadChildren: 'app/user/user.module#UserModule',
-        data: {
-          preload: true
-        }
-      },
-      { path: '**', component: PageNotFoundComponent }  
+      // { path: '', redirectTo: '/welcome', pathMatch: 'full' },
+      // { path: 'welcome',  component: WelcomeComponent },
+      // { path: 'about',  component: AboutComponent },
+      // { path: 'watch-free',  component: WatchFreeComponent },
+      // { path: 'where',  component: BasicLocationMapComponent },
+      // { path: 'login',  component: LoginComponent },
+      // { path: 'posts', loadChildren: 'app/posts/posts.module#PostsModule', data: {preload: false}},
+      // {
+      //   path: 'dashboard',
+      //   loadChildren: 'app/user/user.module#UserModule',
+      //   data: {
+      //     preload: true
+      //   }
+      // },
+      { path: '**', component: PageNotFoundComponent }
     ],
-    { preloadingStrategy: PreloadSelectedModules }
+    { preloadingStrategy: SelectivePreloadingStrategy }
     )
   ],
   exports: [RouterModule],
   providers: [
-    PreloadSelectedModules
+    SelectivePreloadingStrategy
   ]
 })
 export class AppRoutingModule { }

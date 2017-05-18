@@ -1,0 +1,46 @@
+.background {
+    margin: 0px;
+    background-color: #BC3926;
+    height: 100vh;
+}
+
+h1 {
+    margin-top: 0px;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.center-unit {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80%
+}
+
+.title {
+    width: 250px;
+    display: block;
+    margin: 0 auto;
+}
+
+.lense {
+    width: 200px;
+}
+
+.menu-logo {
+    width: 50px;
+    position: absolute;
+    left: 3%;
+    top: 3%;
+}
+
+.message {
+    color: white;
+    font-size: 1.5rem;
+}

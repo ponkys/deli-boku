@@ -10,7 +10,7 @@ import { Observable }   from 'rxjs/Observable';
 export class UserDetailResolve implements Resolve<User> {
   constructor(private us: UserService, private router: Router) {}
 
-  resolve(route: ActivatedRouteSnapshot): Observable<User>|boolean {
+  resolve(route: ActivatedRouteSnapshot): Observable<User> {
     let userName = route.params['userName'];
 
     return this.us.getUserUserName(userName).map(user => {

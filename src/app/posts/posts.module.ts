@@ -17,16 +17,16 @@ import { PostsRoutingModule }     from './posts-routing.module';
         CommonModule,
         SharedModule,
         HttpModule,
-         //routing
+         // routing
         PostsRoutingModule,
     ],
     declarations: [
-        PostsComponent 
+        PostsComponent
     ],
     providers: [
         PostService,
         UserService
     ]
 })
-export class PostsModule { 
+export class PostsModule {
 }
